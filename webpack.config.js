@@ -66,7 +66,7 @@ const serverConfig = {
 };
 
 const clientConfig = {
-    entry: path.join(__dirname, 'src/index.jsx'),
+    entry: path.join(__dirname, 'src/index.js'),
     mode: 'development',
     target: 'web',
     module: {
@@ -143,6 +143,7 @@ const clientConfig = {
     },
     output: {
         path: path.join(__dirname, 'dist/public'),
+        publicPath: '/public/',
         filename: '[name].js',
     },
     optimization: {

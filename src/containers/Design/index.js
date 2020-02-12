@@ -3,7 +3,7 @@ import React from 'react';
 import LeftPanel from '../../conponents/Panel';
 import Button from "../../conponents/Ui/Button";
 
-import './index.scss';
+// import './index.scss';
 
 function Design() {
     const buttonClickHandler = () => {

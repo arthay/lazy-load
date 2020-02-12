@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "../../conponents/Ui/Button";
 
-import './index.scss';
+// import './index.scss';
 
 function Public() {
     const buttonClickHandler = () => {

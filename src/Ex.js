@@ -2,7 +2,7 @@ import React from 'react';
 
 function Ex() {
     return (
-        <div>sdasdas</div>
+        <div>sdasdassdfsd</div>
     );
 }
 
