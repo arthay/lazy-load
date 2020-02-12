@@ -1,0 +1,19 @@
+.button {
+    min-width: 180px;
+    height: 55px;
+    font-size: 12px;
+    padding: 0 50px;
+    line-height: 55px;
+    letter-spacing: 1px;
+    text-indent: 1px;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    background: #000;
+    border: solid transparent;
+    border-width: 0 0 0 0;
+    border-radius: 0 0 0 0;
+    transition: background 300ms ease-out;
+    position: relative;
+    cursor: pointer;
+}

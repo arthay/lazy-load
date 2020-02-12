@@ -1,0 +1,16 @@
+.app {
+    .nav-bar {
+        ul {
+            display: flex;
+            justify-content: center;
+
+            li {
+                margin-left: 20px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+       }
+    }
+}
