@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import logo from './logo.svg';
 import './App.css';
+const Ex = React.lazy(() => import('./Ex'));
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+          <Suspense fallback={<div>Loading...</div>}>
+          <Ex />
+          </Suspense>
         </a>
       </header>
     </div>
