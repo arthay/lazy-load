@@ -4,23 +4,20 @@ import path from 'path'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter as Router } from 'react-router-dom'
-import Index from './src/index.jsx'
+import Ex from './src/Ex';
 
-const app = express()
+const app = express();
 
-app.use('/static', express.static(path.resolve(__dirname, 'build')));
+app.use('/', express.static('src'));
 
 app.get('/', (req, res) => {
-    fs.readFile(path.resolve('./build/index.html'), 'utf8', (err, data) => {
+    fs.readFile(path.resolve('./dist/public/index.html'), 'utf8', (err, data) => {
         if (err) {
-            console.error(err);
-            return res.status(500).send('An error occurred')
+            return res.send('An error occurred')
         }
 
         const component = ReactDOMServer.renderToString(
-            <Router location={req.url} context={{}}>
-                <Index />
-            </Router>
+            <Ex />
         );
 
         return res.send(

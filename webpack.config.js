@@ -1,9 +1,7 @@
-const path = require('path');
-const webpack = require('webpack');
-var nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
+const path = require('path');
 
 const serverConfig = {
     mode: 'development',
@@ -13,7 +11,7 @@ const serverConfig = {
     },
     externals: [nodeExternals()],
     entry: {
-        'index': path.join(__dirname, '../server.js')
+        'index': path.join(__dirname, '/server.js')
     },
     module: {
         rules: [
@@ -48,7 +46,6 @@ const serverConfig = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            plugins: () => [autoprefixer],
                             sourceMap: true,
                         },
                     },
@@ -63,13 +60,13 @@ const serverConfig = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, './dist'),
         filename: '[name].js'
     }
 };
 
 const clientConfig = {
-    entry: path.join(__dirname, '../src/index.jsx'),
+    entry: path.join(__dirname, 'src/index.jsx'),
     mode: 'development',
     target: 'web',
     module: {
@@ -136,18 +133,17 @@ const clientConfig = {
         ],
     },
     plugins: [
-        new MiniCssExtractPlugin(),
         new HtmlWebPackPlugin({
-            template: path.join(__dirname, '../src/index.html')
+            template: path.join(__dirname, 'src/index.html')
         }),
-        new webpack.NamedModulesPlugin(),
+        // new webpack.NamedModulesPlugin(),
     ],
     resolve: {
         extensions: ['*', '.js', '.jsx'],
     },
     output: {
-        path: path.join(__dirname, '../build'),
-        filename: '[name].bundle.js',
+        path: path.join(__dirname, 'dist/public'),
+        filename: '[name].js',
     },
     optimization: {
         splitChunks: {
