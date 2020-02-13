@@ -1,4 +1,5 @@
 import React from 'react';
+//import  Button  from 'react-typography/src/components/Button';
 
 import LeftPanel from '../../conponents/Panel';
 import Button from "../../conponents/Ui/Button";
@@ -18,7 +19,8 @@ function Design() {
             <div className="content">
                 <Button
                     onClick={buttonClickHandler}
-                    title='Click me from Design mode'
+                    type="primary"
+                    title="PRIMARY"
                 />
             </div>
         </div>

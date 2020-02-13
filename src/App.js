@@ -12,6 +12,7 @@ import {
 
 const Design = loadable(() => import('./containers/Design'));
 const Public = loadable(() => import('./containers/Public'));
+const NotFound = loadable(() => import('./containers/404'));
 
 function App() {
     return (
@@ -33,6 +34,9 @@ function App() {
                 </Route>
                 <Route path="/design">
                     <Design />
+                </Route>
+                <Route path="/*">
+                    <NotFound />
                 </Route>
             </Switch>
         </div>

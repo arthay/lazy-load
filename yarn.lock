@@ -9690,6 +9690,18 @@ react-scripts@3.3.1:
   optionalDependencies:
     fsevents "2.1.2"
 
+"react-typography@github:ucraft-com/react-typography#feature/button":
+  version "0.1.0"
+  resolved "git+ssh://git@github.com/ucraft-com/react-typography.git#a40e01e4f84ee7f060d981b51736ee3446daeaa3"
+  dependencies:
+    "@testing-library/jest-dom" "^4.2.4"
+    "@testing-library/react" "^9.3.2"
+    "@testing-library/user-event" "^7.1.2"
+    node-sass "^4.13.1"
+    react "^16.12.0"
+    react-dom "^16.12.0"
+    react-scripts "3.3.1"
+
 react@^16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"

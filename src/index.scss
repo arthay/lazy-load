@@ -88,3 +88,20 @@ a {
         }
     }
 }
+
+.not-found {
+    display: flex;
+    height: calc(100vh - 60px);
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        flex-direction: column;
+
+        h1 {
+            font-size: 36px;
+        }
+    }
+}
