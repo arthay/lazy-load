@@ -139,7 +139,7 @@ const clientConfig = {
         }),
         new webpack.DefinePlugin({
             'process.env': {
-                PUBLIC: JSON.stringify('true')
+                PUBLIC: JSON.stringify(false)
             }
         })
         // new webpack.NamedModulesPlugin(),

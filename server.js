@@ -42,4 +42,5 @@ app.get('/*', (req, res) => {
     })
 });
 
-app.listen(3000);
+app.listen(5050);
+console.log(`server is listening at port 5050 http://localhost:5050`);

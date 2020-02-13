@@ -18,7 +18,7 @@
     "dev": "webpack-dev-server --open --config ./config/webpack.config.dev.js",
     "build": "webpack  --config ./config/webpack.config.prod.js",
     "dev:server": "webpack && concurrently \"webpack --watch\" \"nodemon dist\"",
-    "prod:server": "webpack --config ./webpack.config.prod.js"
+    "prod:server": "webpack --config ./webpack.config.prod.js && concurrently \"nodemon dist\""
   },
   "eslintConfig": {
     "extends": "react-app"
