@@ -1,5 +1,6 @@
 import React from 'react';
-import loadable from '@loadable/component'
+import loadable from '@loadable/component';
+import Panel from  './conponents/Panel';
 
 import {
     Switch,
@@ -15,6 +16,7 @@ const Public = loadable(() => import('./containers/Public'));
 function App() {
     return (
         <div className="app">
+            {!process.env.PUBLIC &&  <Panel/>}
             <nav className="nav-bar">
                 <ul>
                     <li>

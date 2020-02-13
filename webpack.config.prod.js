@@ -1,4 +1,3 @@
-const LoadablePlugin = require('@loadable/webpack-plugin');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
@@ -6,7 +5,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 
 const serverConfig = {
-    mode: 'development',
+    mode: 'production',
     target: 'node',
     node: {
         __dirname: false
@@ -61,7 +60,6 @@ const serverConfig = {
             },
         ]
     },
-    plugins: [new LoadablePlugin()],
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].js'
@@ -70,7 +68,7 @@ const serverConfig = {
 
 const clientConfig = {
     entry: path.join(__dirname, 'src/index.js'),
-    mode: 'development',
+    mode: 'production',
     target: 'web',
     module: {
         rules: [
@@ -141,7 +139,7 @@ const clientConfig = {
         }),
         new webpack.DefinePlugin({
             'process.env': {
-                PUBLIC: JSON.stringify(false)
+                PUBLIC: JSON.stringify('true')
             }
         })
         // new webpack.NamedModulesPlugin(),

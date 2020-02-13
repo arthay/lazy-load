@@ -9,3 +9,82 @@ a {
         text-decoration: none;
     }
 }
+
+.panel {
+    height: 100vh;
+    width: 78px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: #ced3e8;
+    z-index: 3;
+    transition: filter .4s;
+    transition: -webkit-filter .4s;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    min-width: 180px;
+    height: 55px;
+    font-size: 12px;
+    padding: 0 50px;
+    line-height: 55px;
+    letter-spacing: 1px;
+    text-indent: 1px;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    background: #000;
+    border: solid transparent;
+    border-width: 0 0 0 0;
+    border-radius: 0 0 0 0;
+    transition: background 300ms ease-out;
+    position: relative;
+    cursor: pointer;
+}
+
+.design {
+    display: flex;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+}
+
+.public {
+    display: flex;
+    height: calc(100vh - 60px);
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+}
+
+.app {
+    .nav-bar {
+        ul {
+            display: flex;
+            justify-content: center;
+
+            li {
+                margin-left: 20px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

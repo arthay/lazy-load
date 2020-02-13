@@ -16,9 +16,9 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --open --config ./config/webpack.config.dev.js",
-    "dev:server": "webpack --config ./config/webpack.config.common.js && concurrently \"webpack --watch\" \"nodemon dist\"",
     "build": "webpack  --config ./config/webpack.config.prod.js",
-    "dev:ex": "webpack && concurrently \"webpack --watch\" \"nodemon dist\""
+    "dev:server": "webpack && concurrently \"webpack --watch\" \"nodemon dist\"",
+    "prod:server": "webpack --config ./webpack.config.prod.js"
   },
   "eslintConfig": {
     "extends": "react-app"
