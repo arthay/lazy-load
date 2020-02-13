@@ -1,3 +1,4 @@
+const LoadablePlugin = require('@loadable/webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const autoprefixer = require('autoprefixer');
@@ -59,6 +60,7 @@ const serverConfig = {
             },
         ]
     },
+    plugins: [new LoadablePlugin()],
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].js'

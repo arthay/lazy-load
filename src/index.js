@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { loadableReady } from '@loadable/component'
 import { BrowserRouter as Router } from 'react-router-dom'
 import './index.scss';
 import App from './App';
@@ -11,4 +12,6 @@ function Ex() {
         </Router>
     )
 }
-ReactDOM.hydrate(<Ex />, document.getElementById('root'));
+loadableReady(() => {
+    ReactDOM.hydrate(<Ex />, document.getElementById('root'));
+});

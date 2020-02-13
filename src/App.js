@@ -1,7 +1,5 @@
 import React from 'react';
 import loadable from '@loadable/component'
-import Design from "./containers/Design";
-import Public from "./containers/Public";
 
 import {
     Switch,
@@ -11,8 +9,8 @@ import {
 
 // import './App.scss';
 
-// const Design = loadable(() => import('./containers/Design'));
-// const Public = loadable(() => import('./containers/Public'));
+const Design = loadable(() => import('./containers/Design'));
+const Public = loadable(() => import('./containers/Public'));
 
 function App() {
     return (
