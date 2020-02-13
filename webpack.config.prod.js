@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 
 const serverConfig = {
-    mode: 'development',
+    mode: 'production',
     target: 'node',
     node: {
         __dirname: false
@@ -68,7 +68,7 @@ const serverConfig = {
 
 const clientConfig = {
     entry: path.join(__dirname, 'src/index.js'),
-    mode: 'development',
+    mode: 'production',
     target: 'web',
     module: {
         rules: [
@@ -139,7 +139,7 @@ const clientConfig = {
         }),
         new webpack.DefinePlugin({
             'process.env': {
-                PUBLIC: JSON.stringify(false)
+                PUBLIC: JSON.stringify('true')
             }
         })
         // new webpack.NamedModulesPlugin(),
