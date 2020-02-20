@@ -2,16 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { loadableReady } from '@loadable/component'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import configureStore from './shared/store/redux/configureStore';
+
 import './index.scss';
 import App from './App';
 
-function Ex() {
+const store = configureStore();
+
+function Main() {
     return (
-        <Router>
-            <App />
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <App />
+            </Router>
+        </Provider>
     )
 }
 loadableReady(() => {
-    ReactDOM.hydrate(<Ex />, document.getElementById('root'));
+    ReactDOM.hydrate(<Main />, document.getElementById('root'));
 });

@@ -32,7 +32,10 @@ function App() {
                 <Route path="/" exact>
                     <Public />
                 </Route>
-                <Route path="/design">
+                <Route path="/design" exact>
+                    <Design />
+                </Route>
+                <Route path="/design/:alias">
                     <Design />
                 </Route>
                 <Route path="/*">

@@ -5,6 +5,8 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { ChunkExtractor } from '@loadable/server'
 import { StaticRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import configureStore from './src/shared/store/redux/configureStore';
 import App from './src/App';
 
 const app = express();
@@ -21,10 +23,14 @@ app.get('/*', (req, res) => {
 
         const statsFile = path.resolve('./dist/loadable-stats.json');
         const extractor = new ChunkExtractor({ statsFile });
+        const store = configureStore({});
+
         const js = extractor.collectChunks(
-            <Router location={req.url} context={context}>
-                <App />
-            </Router>
+            <Provider store={store}>
+                <Router location={req.url} context={context}>
+                    <App />
+                </Router>
+            </Provider>
         );
         const component = ReactDOMServer.renderToString(js);
 
