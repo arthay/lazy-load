@@ -4,24 +4,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPage, addPage } from '../../shared/store/actions/page';
 import LeftPanel from '../../conponents/Panel';
 import Button from "../../conponents/Ui/Button";
+import socketIOClient from "socket.io-client";
 
 function Design() {
     const { alias } = useParams();
     const dispatch = useDispatch();
+    const socket = socketIOClient('http://localhost:5050');
 
     useEffect(() => {
-        async function fetchPage() {
-            const page = await getPage(alias || '');
+        (async function () {
+            const page = await getPage(alias || '/');
             dispatch(addPage(page));
-        }
+        })();
 
-        fetchPage();
-    }, [dispatch]);
+    }, [dispatch, alias]);
 
     const page = useSelector(state => state.pageReducer.page);
 
     const buttonClickHandler = () => {
-        alert('Button clicked from Design mode');
+        socket.emit('buttonClick', 'Button clicked from Design mode');
+
     };
 
     return (

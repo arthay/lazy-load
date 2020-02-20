@@ -1,6 +1,8 @@
 import express from 'express'
+import http from 'http'
 import fs from 'fs'
 import path from 'path'
+import io from 'socket.io';
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { ChunkExtractor } from '@loadable/server'
@@ -10,6 +12,8 @@ import configureStore from './src/shared/store/redux/configureStore';
 import App from './src/App';
 
 const app = express();
+const server = http.createServer(app);
+const socket = io(server);
 
 app.use('/', express.static('dist'));
 
@@ -47,6 +51,11 @@ app.get('/*', (req, res) => {
         }
     })
 });
-
-app.listen(5050);
-console.log(`server is listening at port 5050 http://localhost:5050`);
+socket.on('connection', (socket) => {
+    socket.on('buttonClick',(msg) => {
+        console.log('message: ' + msg);
+    });
+});
+server.listen(5050, () => {
+    console.log(`server is listening at port 5050 http://localhost:5050`);
+});

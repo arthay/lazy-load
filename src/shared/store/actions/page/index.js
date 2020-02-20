@@ -4,9 +4,11 @@ import { ADD_PAGE } from "./types";
 
 export async function getPage(alias) {
     try {
-        return  await http.get(`/page/${alias}`);
-    } catch (e) {
+        const response = await http.get(`/rest/page/page?path=${alias}`);
 
+        return response.data.page;
+    } catch (e) {
+        window.location = `http://my-accounts.ucraft.net/#/login?redirectTo=${window.location}`;
     }
 }
 

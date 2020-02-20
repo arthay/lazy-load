@@ -143,7 +143,8 @@ const clientConfig = {
             'process.env': {
                 PUBLIC: JSON.stringify(false)
             }
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
         // new webpack.NamedModulesPlugin(),
     ],
     resolve: {
