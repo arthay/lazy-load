@@ -11,6 +11,10 @@ function Design() {
     const dispatch = useDispatch();
     const socket = socketIOClient('http://localhost:5050');
 
+    socket.on('buttonClick', (msg) => {
+        console.log(msg);
+    });
+
     useEffect(() => {
         (async function () {
             const page = await getPage(alias || '/');

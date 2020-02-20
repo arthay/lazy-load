@@ -52,8 +52,9 @@ app.get('/*', (req, res) => {
     })
 });
 socket.on('connection', (socket) => {
-    socket.on('buttonClick',(msg) => {
+    socket.on('buttonClick', (msg) => {
         console.log('message: ' + msg);
+        socket.emit('buttonClick', msg + ' emitted')
     });
 });
 server.listen(5050, () => {
